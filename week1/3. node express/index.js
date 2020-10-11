@@ -1,10 +1,14 @@
 const express = require('express');
 const http = require('http');
+const morgan = require('morgan');
+
 
 const app = express();
 const port = 3000;
 const host = 'localhost';
 
+app.use(express.static('public'));
+app.use(morgan('dev'));
 
 
 app.use((req,res,next)=>{
